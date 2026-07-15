@@ -6,7 +6,7 @@ app=FastAPI()
 # 1. PostgreSQL Veritabanına Bağlantı Açma
 # (Kendi kullanıcı adı, şifre ve veritabanı adınızı yazın)
 
-connection="dbname=test_db user=postgres password=aysg1616! host=localhost port=5432"
+connection="dbname=test_db user=postgres password=12345678! host=localhost port=5432"
 
 try:
     #veritabani bağlantısını başlatır ..
