@@ -63,12 +63,12 @@ def post_get(urun_id:str,fiyat:float):
     with psycopg.connect(connection) as con:
         with conn.cursor() as cur:
             cur.execute(
-                "INSERT INTO GITHUB_URUNLERİ (urun_id,fiyat) VALUES (%S,%S) RETURNING,id;",
+                "INSERT INTO github_urunleri (urun_id,fiyat) VALUES (%S,%S) RETURNING,id;",
                 (urun_id,fiyat)
             )
             yeni_id=cur.fetchall()[0]
             return {"mesaj":"ürün eklendi","eklenen_id":yeni_id}
 def api():
-    uvicorn.run("database_veritabani:app",host="127.0.0.1",port=8000,reload=True)
+    uvicorn.run("database_veritabani:app",host="0.0.0.0",port=8000,reload=True)
 if(__name__=="__main__"):
     api()
